@@ -1,44 +1,48 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
-import { toggleComplete, deleteTodo } from '../features/TodoSlice'
-import { useDispatch } from 'react-redux'
-function Todos() {
-    const dispatch = useDispatch()
-    const todos = useSelector((state) => state.todos )
+import { useDispatch, useSelector } from 'react-redux'
+import { dellTodo, toggleTodo } from '../redux/TodoSlice'
 
-    
+function Todos({item}) {
+  const todos = useSelector((state) => state.todos)
+  const dispatch = useDispatch()
+  const Text = styled.p`
+  color: ${ item.completed ? "gray" : "black"} ;
+  text-decoration: ${ item.completed ? "line-through" : "none"};
+  font-style: ${ item.completed ? "italic" : "none"};;
+`
   return (
-    <div  >
-        {todos.map(todo => 
-            <TodoItem key={todo.id} > <p>{todo.title}</p> 
-              <div>
-              <input
-                onChange={() => dispatch(toggleComplete({id: todo.id, status: todo.status}))} 
-                checked={todo.status} type='checkbox' />
-                <button onClick={() => dispatch(deleteTodo({id: todo.id})) } >x</button> 
-              </div>
-             
-             </TodoItem>
-        )}
-    </div>
+    <TodoElem>
+      <Text>{item.name}</Text> <ControlToDo  >
+        <input checked={item.completed} onChange={() => dispatch(toggleTodo({id: item.id}))} style={{height: "30px", width: "30px"}} type='checkbox' />
+        <button type="button" onClick={() => dispatch(dellTodo({id: item.id,  status: item.completed})) } className="btn btn-outline-danger btn-sm "><i className="bi bi-x-lg"></i></button>
+       </ControlToDo> 
+    </TodoElem>
   )
 }
-const TodoItem = styled.div`
-display: flex;
-width: 40vw;
-border-bottom: 1px solid black;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
 
-@media (max-width: 768px ) {
-    width: 90vw;
-    padding-left: 20px;
-    padding-right: 20px;
-}
+
+const TodoElem = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  
+  @media (max-width: 500px) {
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
 `
 
+const ControlToDo = styled.div`
+  display: flex;
+  align-items: center;
+  input{
+    margin: 10px;
+  }
+
+`
 
 export default Todos
