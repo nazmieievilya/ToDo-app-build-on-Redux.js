@@ -3,50 +3,51 @@ import { useState } from 'react'
 import Todos from './components/Todos';
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
 import { addTodo } from './redux/TodoSlice'
 import { ProgressBar } from 'react-bootstrap';
+import ChangeTodoModal from './components/ChangeTodoModal';
+import { useDispatch } from 'react-redux'
 
 
 function App() {
- const todos = useSelector((state) => state.todos)
+ const todos = useSelector((state) => state.todos.todoList);
  const [text, setText] = useState('')
- 
- 
- const Now = todos.filter((item) => item.completed === true).length;
- const Max = todos.length
+ const [showModal, setShowModal] = useState(false)
  const dispatch = useDispatch()
- function form (e) {
+ const Now = todos.filter((item) => item.completed === true).length
+ const Max = todos.length
+ function form(e) {
    e.preventDefault()
-   dispatch(addTodo({name: text}))
+   dispatch(addTodo({
+     id: Date.now(),
+     name: text,
+     completed: false
+   }))
+   console.log(text)
    setText('')
  }
- const ShowP = Max === 0 ? 0 : Now
   return (
     <>
-    <ProgressBar now={ShowP} max={Max === 0 ? 1 : Max} style={{height: '4px'}}  />
-    <div className='d-flex justify-content-center mt-2 flex-column align-items-center' >
-        <h1>Список справ</h1>
-        <div className='App'>
-          <InputContainer>
-            <form  
-            onSubmit={form}
-            >
-            <input 
-            onChange={(e) => setText(e.target.value)}
-            value={text}
-            type='text'
-            style={{height: '30px'}}
-            placeholder='       Введіть завдання'
-            />
-            <button type='submit' onClick={form} className="btn btn-outline-success btn-sm">Додати</button>
-            </form>
-          
-          </InputContainer>
-        
-          {todos.map((item) => <Todos key={item.id} item={item} /> )}
-        </div>
+    <div clasName="App">
+    <ProgressBar  now={Now} max={Max} style={{height: '4px'}} className='barr' />
+
+      <div className='d-flex justify-content-center mt-2 flex-column align-items-center' >
+    
+          <h1>Список справ</h1>
+          <div className='App'>
+              <div className='d-flex w-100 justify-content-end' >
+                <button  type='submit' onClick={() => setShowModal(true)} className="btn btn-outline-success btn-sm">
+                  Додати
+                </button>
+              </div>
+              
+            
+            <ChangeTodoModal setShowModal={setShowModal} show={showModal} />
+          {todos.map((item) => <Todos key={item.id} item={item} />)}
+          </div>
+      </div>
     </div>
+   
     </>
     
     
