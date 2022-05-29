@@ -2,24 +2,38 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import {dellTodo, toggleTodo} from '../redux/TodoSlice'
-function Todos({item}) {
+
+
+
+function Todos({item, textOnClick, setIdToChange}) {
   const dispatch = useDispatch()
+  function sendId() {
+    setIdToChange({
+      id: item.id,
+      text: item.name
+    })
+    textOnClick(true)
+  }
+  const Text = styled.p`
+  margin: 0;
+  padding: 12px;
+  text-decoration: ${item.completed ? 'line-through' : 'none'};
+  font-style: ${item.completed ? 'italic' : 'none'};
+  color: ${item.completed ? 'gray' : 'black'};
+`
  
   return (
-    <TodoElem>
-        <Text>{item.name}</Text> 
+    <TodoElem >
+        <Text style={{width: "100%"}} onClick={() => sendId() } >{item.name}</Text> 
       <ControlToDo  >
         <input class="form-check-input" checked={item.completed} onChange={() => dispatch(toggleTodo({id: item.id}))} style={{height: "30px", width: "30px"}} type='checkbox'/>
-        <button type="button" onClick={() => dispatch(dellTodo({id: item.id}))} className="btn btn-outline-danger btn-sm "><i className="bi bi-x-lg"></i></button>
+        
        </ControlToDo> 
     </TodoElem>
   )
 }
 
-const Text = styled.p`
-  padding: 0;
-  margin: 0;
-`
+
 const TodoElem = styled.div`
   display: flex;
   width: 100%;
