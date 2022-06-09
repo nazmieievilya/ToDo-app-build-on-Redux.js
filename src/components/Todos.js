@@ -1,9 +1,8 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-
 import { toggleTodo } from "redux/TodoSlice";
+import styled from "styled-components";
 
 function Todos({ item, textOnClick, setIdToChange }) {
   const dispatch = useDispatch();
@@ -37,18 +36,6 @@ function Todos({ item, textOnClick, setIdToChange }) {
       opacity: 1,
     },
   };
-  const boxVariant = {
-    hidden: {
-      x: "-100vw",
-    },
-    visible: {
-      x: 0,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
   return (
     <motion.div variants={appearAnim} initial="hidden" animate="visible">
@@ -73,7 +60,6 @@ function Todos({ item, textOnClick, setIdToChange }) {
 const TodoElem = styled.div`
   display: flex;
   width: 700px;
-  background-color: pink;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
