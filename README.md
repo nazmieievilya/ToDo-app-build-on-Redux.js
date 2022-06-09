@@ -8,7 +8,7 @@ There are a lot of technologies which can be handy and useful while building Rea
 
 ### `Bootstrap`
 
-It`s a library that provides ready to use components and css-classes. In this project I`ve imported progressbar, buttons and pop-up forms. That allows to make appearance of application more satisfying and spend more time and energy on developing functionality
+It`s a library that provides ready to use components and css-classes. In this project Ive imported progressbar, buttons and pop-up forms. That allows to make appearance of application more satisfying and spend more time and energy on developing functionality
 
 ### `Framer Motion`
 
