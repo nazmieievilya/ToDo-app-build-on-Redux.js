@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Redux ToDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project I`ve build using Redux state manager and styled with Bootstrap, Framer Motion libraries. 
 
-## Available Scripts
+## What I`ve learn?
 
-In the project directory, you can run:
+There are a lot of technologies which can be handy and useful while building React websites, such as
 
-### `npm start`
+### `Bootstrap`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It`s a library that provides ready to use components and css-classes. In this project I`ve imported progressbar, buttons and pop-up forms. That allows to make appearance of application more satisfying and spend more time and energy on developing functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Framer Motion`
 
-### `npm test`
+It`s another React library, but specifises on animation. You can make really brilliant and splendid animation in a second with such benefits as above(spend more time and energy on functionality)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Styled Components`
 
-### `npm run build`
+Another one library that may be very useful if you want to make your website interactive and don`t want to prepare extra css-files
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Redux`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Functionality**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I saw a lot of ToDo apps as pet-projects but I decided to expand their functionality and add more interactive components, such requirements need state management and Redux the most popular solution. It also has its own browser plugin (Redux Toolkit) that brings opportunity to see changes of  state graphs and objects in real time
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
