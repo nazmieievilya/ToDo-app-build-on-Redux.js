@@ -4,7 +4,7 @@ This project I`ve build using Redux state manager and styled with Bootstrap, Fra
 
 ## What I`ve learn?
 
-There are a lot of technologies which can be handy and useful while building React websites, such as
+There are a lot of technologies which can be handy and useful while building React websites, such as:
 
 ### `Bootstrap`
 
