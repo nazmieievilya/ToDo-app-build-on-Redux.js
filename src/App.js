@@ -73,7 +73,6 @@ function App() {
             setFilterState={setFilterState}
           />
           <AddTodoModal
-            idToChange={idToChange}
             setShowModal={setShowModal}
             show={showModal}
           />

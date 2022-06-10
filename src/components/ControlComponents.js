@@ -1,8 +1,9 @@
+import { TodoStatuses } from "constants/constants";
 import React from "react";
-import { useState } from "react";
 import styled from "styled-components";
 
 const ControlContainer = styled.div`
+  padding: 10px;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -11,14 +12,14 @@ const ControlContainer = styled.div`
 function ControlComponents({ setFilterState, setShowModal }) {
   function filterTodo(option) {
     switch (option) {
-      case "completed":
-        setFilterState("completed");
+      case TodoStatuses.Completed:
+        setFilterState(TodoStatuses.Completed);
         break;
-      case "uncompleted":
-        setFilterState("uncompleted");
+      case TodoStatuses.Uncompleted:
+        setFilterState(TodoStatuses.Uncompleted);
         break;
       default:
-        setFilterState("all");
+        setFilterState(TodoStatuses.All);
         break;
     }
   }
@@ -30,11 +31,9 @@ function ControlComponents({ setFilterState, setShowModal }) {
         aria-label="Default select example"
         onChange={(e) => filterTodo(e.target.value)}
       >
-        <option selected value="all">
-          Всі
-        </option>
-        <option value="completed">Виконані</option>
-        <option value="uncompleted">Невиконані</option>
+        <option defaultValue={TodoStatuses.All}>Всі</option>
+        <option value={TodoStatuses.Completed}>Виконані</option>
+        <option value={TodoStatuses.Uncompleted}>Невиконані</option>
       </select>
       <button
         type="submit"
