@@ -27,7 +27,6 @@ const AppContainer = styled.div`
   align-items: center;
   width: 700px;
   margin: 0;
-  padding: 0;
   position: static;
   overflow-x: hidden;
   @media (max-width: 700px) {
@@ -72,10 +71,7 @@ function App() {
             setShowModal={setShowModal}
             setFilterState={setFilterState}
           />
-          <AddTodoModal
-            setShowModal={setShowModal}
-            show={showModal}
-          />
+          <AddTodoModal setShowModal={setShowModal} show={showModal} />
           <ChangeTodoModal
             idToChange={idToChange}
             show={showChangeModal}

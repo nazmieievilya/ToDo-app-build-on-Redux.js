@@ -1,8 +1,14 @@
 import Todos from "components/Todos";
+import { TodoStatuses } from "constants/constants";
 import { motion } from "framer-motion";
 import React from "react";
 import { useSelector } from "react-redux";
-import { TodoStatuses } from "constants/constants";
+import styled from "styled-components";
+
+const TodoContainer = styled.div`
+  border-bottom: 1px solid black;
+  padding: 5px;
+`;
 function TodosComponent({ setIdToChange, setShowChangeModal, filterState }) {
   const todos = useSelector((state) => state.todos.todoList);
   const listVariant = {
@@ -45,21 +51,23 @@ function TodosComponent({ setIdToChange, setShowChangeModal, filterState }) {
     <motion.div variants={boxVariant} initial="hidden" animate="visible">
       {returnList().map((item) => {
         return (
-          <motion.div key={item.id}
-            whileHover={{
-              scale: 1.005,
-            }}
-            whileTap={{
-              scale: 0.99,
-            }}
-            variants={listVariant}
-          >
-            <Todos
-              setIdToChange={setIdToChange}
-              textOnClick={setShowChangeModal}
-              item={item}
-            />
-          </motion.div>
+          <>
+            <TodoContainer>
+              <motion.div
+                key={item.id}
+                whileTap={{
+                  scale: 0.995,
+                }}
+                variants={listVariant}
+              >
+                <Todos
+                  setIdToChange={setIdToChange}
+                  textOnClick={setShowChangeModal}
+                  item={item}
+                />
+              </motion.div>
+            </TodoContainer>
+          </>
         );
       })}
     </motion.div>

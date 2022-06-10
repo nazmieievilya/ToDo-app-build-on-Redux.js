@@ -14,8 +14,10 @@ function Todos({ item, textOnClick, setIdToChange }) {
     textOnClick(true);
   }
   const Text = styled.p`
+  border: none;
+    width: 100%;
     margin: 0;
-    padding: 12px;
+    padding: 15px;
     text-decoration: ${item.completed ? "line-through" : "none"};
     font-style: ${item.completed ? "italic" : "none"};
     color: ${item.completed ? "gray" : "black"};
@@ -40,9 +42,7 @@ function Todos({ item, textOnClick, setIdToChange }) {
   return (
     <motion.div variants={appearAnim} initial="hidden" animate="visible">
       <TodoElem>
-        <Text style={{ width: "100%" }} onClick={() => sendId()}>
-          {item.name}
-        </Text>
+        <Text onClick={() => sendId()}>{item.name}</Text>
         <ControlToDo>
           <input
             class="form-check-input"
@@ -58,13 +58,12 @@ function Todos({ item, textOnClick, setIdToChange }) {
 }
 
 const TodoElem = styled.div`
+  margin: 0;
   display: flex;
   width: 700px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+
   @media (max-width: 700px) {
     width: 95vw;
   }
