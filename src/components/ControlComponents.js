@@ -26,7 +26,7 @@ function ControlComponents({ setFilterState, setShowModal }) {
   return (
     <ControlContainer>
       <select
-        class="form-select"
+        className="form-select"
         style={{ width: "150px" }}
         aria-label="Default select example"
         onChange={(e) => filterTodo(e.target.value)}

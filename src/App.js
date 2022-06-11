@@ -32,22 +32,6 @@ const AppContainer = styled.div`
   @media (max-width: 700px) {
     width: 100vw;
   }
-  .barr {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
 `;
 function App() {
   const todos = useSelector((state) => state.todos.todoList);

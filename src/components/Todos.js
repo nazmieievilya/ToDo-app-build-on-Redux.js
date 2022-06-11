@@ -14,7 +14,7 @@ function Todos({ item, textOnClick, setIdToChange }) {
     textOnClick(true);
   }
   const Text = styled.p`
-  border: none;
+    border: none;
     width: 100%;
     margin: 0;
     padding: 15px;
@@ -44,11 +44,10 @@ function Todos({ item, textOnClick, setIdToChange }) {
       <TodoElem>
         <Text onClick={() => sendId()}>{item.name}</Text>
         <ControlToDo>
-          <input
-            class="form-check-input"
+          <StyledInput
+            className="form-check-input"
             checked={item.completed}
             onChange={() => dispatch(toggleTodo({ id: item.id }))}
-            style={{ height: "25px", width: "25px" }}
             type="checkbox"
           />
         </ControlToDo>
@@ -56,6 +55,11 @@ function Todos({ item, textOnClick, setIdToChange }) {
     </motion.div>
   );
 }
+
+const StyledInput = styled.input`
+  width: 25px;
+  height: 25px;
+`;
 
 const TodoElem = styled.div`
   margin: 0;
