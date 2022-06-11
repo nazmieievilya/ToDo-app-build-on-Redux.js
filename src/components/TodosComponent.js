@@ -10,9 +10,9 @@ const TodoContainer = styled.div`
   padding: 5px;
 `;
 function TodosComponent({ setIdToChange, setShowChangeModal, filterState }) {
-  const todos = useSelector((state) => state.todos.todoList);
+  
+const todos = useSelector((state) => state.todos.todoList);
   const [filteredTodos, setFilteredTodos] = useState(todos);
-
   const listVariant = {
     hidden: {
       x: -10,
@@ -39,6 +39,7 @@ function TodosComponent({ setIdToChange, setShowChangeModal, filterState }) {
     },
   };
   useEffect(() => {
+    setFilteredTodos(todos)
     switch (filterState) {
       case TodoStatuses.Completed:
         setFilteredTodos(todos.filter((item) => item.completed === true));
