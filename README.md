@@ -2,7 +2,7 @@
 
 This project I`ve build using Redux state manager and styled with Bootstrap, Framer Motion libraries. 
 
-## What I`ve learn?
+## What I`ve learned?
 
 There are a lot of technologies which can be handy and useful while building React websites, such as
 
