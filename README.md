@@ -12,7 +12,7 @@ It`s a library that provides ready to use components and css-classes. In this pr
 
 ### `Framer Motion`
 
-It`s another React library, but specifises on animation. You can make really brilliant and splendid animation in a second with such benefits as above(spend more time and energy on functionality)
+It`s another React library, but specifises on animation. You can make really brilliant and splendid animation in a seconds with such benefits as above(spend more time and energy on functionality)
 
 ### `Styled Components`
 
